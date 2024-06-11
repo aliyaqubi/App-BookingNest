@@ -2,6 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+
+  fetch('http://127.0.0.1:8000/product/all')
+    .then(Response => {
+      console.log(Response.json());
+    })
+    .catch(error => {
+      console.log(error);
+    })
+
+  
   return (
     <div className="App">
       <header className="App-header">
