@@ -1,4 +1,18 @@
-.App {
+* {
+  margin: 0px;
+}
+
+.app{
+  background-color: #fafafa;
+}
+
+.app_hotels {
+  padding: 20px;
+}
+
+
+/* Block 1: the main content of file when installing & strating the React */
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +49,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+}  */
