@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './RegisterC.css';  // Import the CSS file
 
 
 const RegisterCustomer = () => {
@@ -14,6 +15,20 @@ const RegisterCustomer = () => {
   const [age, setAge] = useState('');
   const [message, setMessage] = useState('');
 
+
+//    <div>
+//      <div className ="app_hotels">   
+//        <h1>BookingNest</h1>
+//      < RegisterCustomer />
+//      </div>      
+//    </div>
+//    <div>
+//      <div className ="app_hotels">   
+//        <h1>BookingNest</h1>
+//      < RegisterHotel />
+//      </div>      
+//    </div>
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -26,27 +41,26 @@ const RegisterCustomer = () => {
         phone,
         adress,
         nationality,
-        age
+        age,
       });
       if (response && response.data) {
         setMessage('Congratulations! your are registared successfully.');
       } else {
         setMessage('Unexpected response format');
       }
-      //setMessage(response.data.message);
     } catch (error) {
       if (error.response && error.response.data) {
         setMessage('Error: ' + error.response.data.detail);
       } else {
         setMessage('Error: ' + error.message);
       }
-      //setMessage('Error: ' + error.response.data.detail);
     }
   };
 
   return (
-    <div>
-      <h2>RegisterCustomer</h2>
+    <div>  
+    <div className="form-container">
+      <h2>Register as Customer</h2>
       <form onSubmit={handleSubmit}>
       <div>
           <label>Firstname:</label>
@@ -124,7 +138,11 @@ const RegisterCustomer = () => {
       </form>
       {message && <p>{message}</p>}
     </div>
+    </div>
   );
 };
 
 export default RegisterCustomer;
+
+
+
