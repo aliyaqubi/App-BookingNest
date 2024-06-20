@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import './App.css'; // Import the CSS file
 import Home from './Home';
 //import Hotel from './Hotel.js';
+import SignupPage from './SignupPage';
 import RegisterCustomer from './RegisterC.js';
 import RegisterHotel from './RegisterH.js';
 
@@ -40,6 +41,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/signup" element={<SignupPage/>} />
             <Route path="/register-customer" element={<RegisterCustomer />} />
             <Route path="/register-hotel" element={<RegisterHotel />} />
           </Routes>
