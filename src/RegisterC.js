@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './RegisterC.css';  // Import the CSS file
+import './RegisterC.css'; 
 
 
 const RegisterCustomer = () => {
@@ -16,18 +16,6 @@ const RegisterCustomer = () => {
   const [message, setMessage] = useState('');
 
 
-//    <div>
-//      <div className ="app_hotels">   
-//        <h1>BookingNest</h1>
-//      < RegisterCustomer />
-//      </div>      
-//    </div>
-//    <div>
-//      <div className ="app_hotels">   
-//        <h1>BookingNest</h1>
-//      < RegisterHotel />
-//      </div>      
-//    </div>
 
   const handleSubmit = async (event) => {
     event.preventDefault();

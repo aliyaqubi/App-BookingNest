@@ -1,6 +1,6 @@
-/* .hotel & .hotel_image comes from Hotel.js > className */
+/* Block 1: Style for .hotel & .hotel_image (They come from className in Hotel.js) (v116) */
 
-/* .hotel {
+.hotel {
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -12,9 +12,19 @@
     margin-bottom: 45px;
 }
 
-.hotel_image{
+.hotel_image {
     width: 100%;
     object-fit: contain;
     border-top: 1px solid lightgray;
     border-bottom: 1px  solid lightgray;
-} */
+}
+
+.image_caption {
+    font-weight: normal;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.hotel_comments {
+    padding: 20px;
+}

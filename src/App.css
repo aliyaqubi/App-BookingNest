@@ -98,9 +98,29 @@ p {
   background-color: #fafafa;
 }
 
+/* for uploading image_hotel from back-end (fastapi.v115 + Note 1) */
 .app_hotels {
   padding: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
