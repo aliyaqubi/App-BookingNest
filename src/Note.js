@@ -1,7 +1,9 @@
-// <button style={{ margin: '0 5px', padding: '10px 20px', backgroundColor: 'white', color: '#4CAF50', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
-// Login
-// </button>
+/* <Button onClick={() => signOut()} variant="contained" color="primary">
+                  Logout
+                </Button> */
 
+
+// <Route path="" element={<LogInOut />} />               
 //> Note 1: uploading image_hotel from back-end (fastapi.v115) - Should add to App.js ?
 
 //import Hotel from './Hotel.js';
@@ -299,12 +301,12 @@
 // function App() {
 
 //   fetch('http://127.0.0.1:8000/product/all')
-//     .then(Response => {
-//       console.log(Response.json());
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     })
+    // .then(Response => {
+    //   console.log(Response.json());
+    // })
+    // .catch(error => {
+    //   console.log(error);
+    // })
 
   
 //   return (

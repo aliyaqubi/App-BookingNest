@@ -45,15 +45,16 @@ const RegisterCustomer = () => {
     }
   };
 
-  return (
+  return (               //> 'e' in all of <input/> elements stands for 'event'
     <div>  
     <div className="form-container">
-      <h2>Register as Customer</h2>
+      <h2 style={{ marginTop: '10px' , marginBottom: '60px' , color:'green'}}>Register</h2>
       <form onSubmit={handleSubmit}>
       <div>
           <label>Firstname:</label>
           <input
             type="text"
+            required
             value={firstname}
             onChange={(e) => setFirstname(e.target.value)}
           />
@@ -62,6 +63,7 @@ const RegisterCustomer = () => {
           <label>Secondname:</label>
           <input
             type="text"
+            required
             value={secondname}
             onChange={(e) => setSecondname(e.target.value)}
           />
@@ -70,6 +72,7 @@ const RegisterCustomer = () => {
           <label>Username:</label>
           <input
             type="text"
+            required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -78,6 +81,7 @@ const RegisterCustomer = () => {
           <label>Password:</label>
           <input
             type="password"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -86,6 +90,7 @@ const RegisterCustomer = () => {
           <label>Email:</label>
           <input
             type="text"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -124,7 +129,11 @@ const RegisterCustomer = () => {
         </div>
         <button type="submit">Register</button>
       </form>
-      {message && <p>{message}</p>}
+      {message && 
+        <p style={{ fontWeight: 'bold' , backgroundColor: '#4CAF50', padding: '20px', textAlign: 'center' , borderRadius: '10px' , color: 'blue' }}>
+          {message}
+        </p>
+      }
     </div>
     </div>
   );

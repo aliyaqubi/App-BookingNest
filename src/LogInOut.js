@@ -3,55 +3,55 @@ import { Modal, Input, Button, Box } from "@mui/material";
 //import {makeStyles} from "@mui/styles";
 //import './LogInOut.css';
 
-const LogInOut = ({ signIn }) => {
+// const LogInOut = ({ signIn }) => {
 
-    const [openSignIn, setOpenSignIn] = useState(false);
-    //const [openSignUp, setOpenSignUp] = useState(false);
-    //const [modalStyle, setModalStyle] = useState(getModalStyle);
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+//     const [openSignIn, setOpenSignIn] = useState(false);
+//     //const [openSignUp, setOpenSignUp] = useState(false);
+//     //const [modalStyle, setModalStyle] = useState(getModalStyle);
+//     const [username, setUsername] = useState('');
+//     const [password, setPassword] = useState('');
 
-    return (
-      <Modal open={openSignIn} onClose={() => setOpenSignIn(false)}>
-        <Box
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 400,
-            bgcolor: 'background.paper',
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          <h2>Login</h2>
-          <form className= "signin">
-            <center>
-                <h3 style={{ margin: 0 }}>BookingNest ...</h3>
-            </center>
-            <input
-                placeholder= 'username'
-                type= 'text'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)} 
-            />
-            <input
-                placeholder= 'password'
-                type= 'password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)} 
-            />
-            <Button
-                type= 'submit'
-                onClick={signIn}>Log in</Button>
-          </form>
-        </Box>
-      </Modal>
-    );
-};
+//     return (
+//       <Modal open={openSignIn} onClose={() => setOpenSignIn(false)}>
+//         <Box
+//           sx={{
+//             position: 'absolute',
+//             top: '50%',
+//             left: '50%',
+//             transform: 'translate(-50%, -50%)',
+//             width: 400,
+//             bgcolor: 'background.paper',
+//             boxShadow: 24,
+//             p: 4,
+//           }}
+//         >
+//           <h2>Login</h2>
+//           <form className= "signin">
+//             <center>
+//                 <h3 style={{ margin: 0 }}>BookingNest ...</h3>
+//             </center>
+//             <input
+//                 placeholder= 'username'
+//                 type= 'text'
+//                 value={username}
+//                 onChange={(e) => setUsername(e.target.value)} 
+//             />
+//             <input
+//                 placeholder= 'password'
+//                 type= 'password'
+//                 value={password}
+//                 onChange={(e) => setPassword(e.target.value)} 
+//             />
+//             <Button
+//                 type= 'submit'
+//                 onClick={signIn}>Log in</Button>
+//           </form>
+//         </Box>
+//       </Modal>
+//     );
+// };
 
-export default LogInOut;
+// export default LogInOut;
 
 
 // //> Modal Style

@@ -49,15 +49,16 @@ const RegisterHotel = () => {
     }
   };
  
-  return (
+  return (               //> 'e' in all of <input/> elements stands for 'event'
     <div>  
     <div className="form-container">
-      <h2>Register Your Hotel</h2>
+      <h2 style={{  marginTop: '10px' , marginBottom: '60px' , color:'green'}}>Register Your Hotel</h2>
       <form onSubmit={handleSubmit}>
       <div>
           <label>Hotel Name:</label>
           <input
             type="text"
+            required
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -66,6 +67,7 @@ const RegisterHotel = () => {
           <label>Manager Name:</label>
           <input
             type="text"
+            required
             value={manager}
             onChange={(e) => setManager(e.target.value)}
           />
@@ -74,6 +76,7 @@ const RegisterHotel = () => {
           <label>Username:</label>
           <input
             type="text"
+            required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -82,6 +85,7 @@ const RegisterHotel = () => {
           <label>Password:</label>
           <input
             type="password"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -90,6 +94,7 @@ const RegisterHotel = () => {
           <label>Email:</label>
           <input
             type="text"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -98,6 +103,7 @@ const RegisterHotel = () => {
           <label>Phone:</label>
           <input
             type="text"
+            required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
@@ -106,6 +112,7 @@ const RegisterHotel = () => {
           <label>Adress:</label>
           <input
             type="text"
+            required
             value={adress}
             onChange={(e) => setAdress(e.target.value)}
           />
@@ -114,6 +121,7 @@ const RegisterHotel = () => {
           <label>Country:</label>
           <input
             type="text"
+            required
             value={country}
             onChange={(e) => setCountry(e.target.value)}
           />
@@ -122,6 +130,7 @@ const RegisterHotel = () => {
           <label>City:</label>
           <input
             type="text"
+            required
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
@@ -144,7 +153,11 @@ const RegisterHotel = () => {
         </div>
         <button type="submit">Register</button>
       </form>
-      {message && <p>{message}</p>}
+      {message && 
+        <p style={{ fontWeight: 'bold' , backgroundColor: '#4CAF50', padding: '20px', textAlign: 'center' , borderRadius: '10px' , color: 'blue' }}>
+          {message}
+        </p>
+      }
     </div>
     </div>
   );
