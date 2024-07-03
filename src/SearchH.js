@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { styled } from '@mui/system';
+import { NavLink, Link } from 'react-router-dom';
 
 // const Input = styled.input`
 //   padding: 10px;
@@ -93,11 +94,13 @@ const SearchH = () => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
-          <button
-            style={{ width: '315px', padding: '10px 20px', margin: '10px auto', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
-            onClick={handleSearch}>
-              Search
-          </button>
+          <Link to="/search-hotel-results">
+            <button
+              style={{ width: '315px', padding: '10px 20px', margin: '10px auto', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+              onClick={handleSearch}>
+                Search
+            </button>
+          </Link>
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       <div>
