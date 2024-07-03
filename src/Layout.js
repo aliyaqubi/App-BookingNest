@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Modal, Button, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { NavLink, Link } from 'react-router-dom';
+import logo from './images/BookingNest.png';
 //import LogInOut from './LogInOut.js';
 
 const BASE_URL = 'http://localhost:8000/' 
@@ -17,12 +18,18 @@ const Header = styled('header')(({ theme }) => ({
   color: 'white',
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'center'
+  alignItems: 'center',
 }));
 
 const Title = styled('h1')(({ theme }) => ({
-  margin: 0,
-  fontSize: '32px'
+  fontSize: '40px',
+  display: 'flex',
+  alignItems: 'center'
+}));
+
+const Logo = styled('img')(({ theme }) => ({
+  height: '100px',
+  marginRight: '35px'
 }));
 
 const StyledButton = styled('button')(({ theme }) => ({
@@ -112,7 +119,12 @@ const Layout = ({ children }) => {
   return (  
     <div>
       <Header>
-        <Title>BookingNest...</Title>  
+        <Title>
+          <NavLink to="/" exact activeClassName="active" href="#home" style={{ textDecoration: 'none', color: '#4CAF50' }}>
+            <Logo src={logo} alt="BookingNest Logo" />
+          </NavLink>
+          BookingNest
+        </Title>  
         <nav>
           <header>
             {authToken ? (
