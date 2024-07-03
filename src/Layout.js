@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
     const [password, setPassword] = useState('');
     const [authToken, setAuthToken] = useState(null);
     const [authTokenType, setAuthTokenType] = useState(null);
-    const [adminId, setAdminId] = useState('');
+    const [hotelId, setHotelId] = useState('');
 
     
 
@@ -79,7 +79,7 @@ const Layout = ({ children }) => {
         body: formData
       }
 
-      fetch(BASE_URL + 'admin-token', requestOptions)
+      fetch(BASE_URL + 'hotel-token', requestOptions)
         .then(response => {
           if (response.ok) {
             return response.json()
@@ -90,7 +90,7 @@ const Layout = ({ children }) => {
           console.log(data);
           setAuthToken(data.access_token)
           setAuthTokenType(data.token_type)
-          setAdminId(data.admin_id)
+          setHotelId(data.hotel_id)
           setUsername(data.username)
         })
         .catch(error => {
@@ -105,7 +105,7 @@ const Layout = ({ children }) => {
     const signOut = (event) => {
       setAuthToken('')
       setAuthTokenType('')
-      setAdminId('')
+      setHotelId('')
       setUsername('')
     }
 

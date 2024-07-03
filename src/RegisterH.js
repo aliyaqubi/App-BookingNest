@@ -55,7 +55,7 @@ const RegisterHotel = () => {
       <h2 style={{  marginTop: '10px' , marginBottom: '60px' , color:'green'}}>Register Your Hotel</h2>
       <form onSubmit={handleSubmit}>
       <div>
-          <label>Hotel Name:</label>
+          <label>Hotel Name *</label>
           <input
             type="text"
             required
@@ -64,7 +64,7 @@ const RegisterHotel = () => {
           />
         </div>
         <div>
-          <label>Manager Name:</label>
+          <label>Manager Name *</label>
           <input
             type="text"
             required
@@ -73,7 +73,7 @@ const RegisterHotel = () => {
           />
         </div>
         <div>
-          <label>Username:</label>
+          <label>Username *</label>
           <input
             type="text"
             required
@@ -82,7 +82,7 @@ const RegisterHotel = () => {
           />
         </div>
         <div>
-          <label>Password:</label>
+          <label>Password *</label>
           <input
             type="password"
             required
@@ -91,7 +91,7 @@ const RegisterHotel = () => {
           />
         </div>
         <div>
-          <label>Email:</label>
+          <label>Email *</label>
           <input
             type="text"
             required
@@ -100,7 +100,7 @@ const RegisterHotel = () => {
           />
         </div>
         <div>
-          <label>Phone:</label>
+          <label>Phone *</label>
           <input
             type="text"
             required
@@ -109,7 +109,7 @@ const RegisterHotel = () => {
           />
         </div>
         <div>
-          <label>Adress:</label>
+          <label>Adress *</label>
           <input
             type="text"
             required
@@ -118,7 +118,7 @@ const RegisterHotel = () => {
           />
         </div>
         <div>
-          <label>Country:</label>
+          <label>Country *</label>
           <input
             type="text"
             required
@@ -127,7 +127,7 @@ const RegisterHotel = () => {
           />
         </div>
         <div>
-          <label>City:</label>
+          <label>City *</label>
           <input
             type="text"
             required
@@ -136,7 +136,7 @@ const RegisterHotel = () => {
           />
         </div>
         <div>
-          <label>Rooms:</label>
+          <label>Number of rooms:</label>
           <input
             type="text"
             value={rooms}
@@ -151,6 +151,9 @@ const RegisterHotel = () => {
             onChange={(e) => setStar(e.target.value)}
           />
         </div>
+        <p style={{ textAlign: 'center' , color: 'blue' }}>
+          Fields marked with an asterisk (*) are required.
+        </p>
         <button type="submit">Register</button>
       </form>
       {message && 
