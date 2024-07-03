@@ -8,7 +8,8 @@ import Contact from './Contact.js';
 import About from './About.js';
 import RegisterCustomer from './RegisterC.js';
 import RegisterHotel from './RegisterH.js';
-import LogInOut from './LogInOut.js';
+import SearchH from './SearchH.js';
+// import LogInOut from './LogInOut.js';
 // import Hotel from './Hotel.js';
 
 
@@ -18,32 +19,49 @@ const BASE_URL = 'http://localhost:8000/'        //> Base URL for server endpoin
 
 function App() {
 
+  // Define state variables
+  const [username, setUsername] = useState('');
+  // const [password, setPassword] = useState('');
+  const [authToken, setAuthToken] = useState('');
+  const [authTokenType, setAuthTokenType] = useState('');
+  const [hotelId, setHotelId] = useState('');
+
+  // retreiving dtat from window local storage
+  useEffect(() => {
+    setAuthToken(window.localStorage.getItem('authToken') || '');
+    setAuthTokenType(window.localStorage.getItem('authTokenType') || '');
+    setUsername(window.localStorage.getItem('username') || '');
+    setHotelId(window.localStorage.getItem('hotelId') || '');
+  }, []);
+
+  // Update localStorage whenever page state changes by refreshing (storing dtat in window local storage)
+  useEffect(() => {
+    authToken
+      ? window.localStorage.setItem('authToken', authToken)
+      : window.localStorage.removeItem('authToken');
+    authTokenType
+      ? window.localStorage.setItem('authTokenType', authTokenType)
+      : window.localStorage.removeItem('authTokenType');
+    username
+      ? window.localStorage.setItem('username', username)
+      : window.localStorage.removeItem('username');
+    hotelId
+      ? window.localStorage.setItem('hotelId', hotelId)
+      : window.localStorage.removeItem('hotelId');
+  }, [authToken, authTokenType, username, hotelId]);
+
   
   return (
     <div>
       <Router>
-      <Layout> 
-          <div className="App">
-            <nav>
-              <NavLink to="/" exact activeClassName="active" href="#home" style={{ textDecoration: 'none', color: '#4CAF50' }}>
-                Home
-              </NavLink>
-              {' | '}
-              <NavLink to="/about" activeClassName="active" href="#about" style={{ textDecoration: 'none', color: '#4CAF50' }}>
-                About
-              </NavLink>
-              {' | '}
-              <NavLink to="/contact" activeClassName="active" href="#contact" style={{ textDecoration: 'none', color: '#4CAF50' }}>
-                Contact
-              </NavLink>
-            </nav>   
+        <Layout> 
+          <div className="App"> 
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/customer-registration" element={<RegisterCustomer/>} />
               <Route path="/hotel-registration" element={<RegisterHotel />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
-              <Route path="" element={<LogInOut />} />
             </Routes>
           </div>
         </Layout>
