@@ -1,5 +1,37 @@
+{/* <div>
+        {results.map((hotel, index) => (
+          <results key={index} 
+            style={{ padding: '10px', marginTop: '20px', backgroundColor: 'blue', border: '1px solid #ccc', borderRadius: '5px'}}>
+            <p>{hotel.name}</p>
+            <p>{hotel.city}, {hotel.country}</p>
+          </results>
+        ))}
+      </div>
+
+{results.length > 0 ? (
+  results.map((hotel, index) => (
+      <Result key={index}>
+          <p>{hotel.name}</p>
+          <p>{hotel.city}, {hotel.country}</p>
+      </Result>
+  ))
+) : (
+  <p>No results found</p> 
+)}
 
 
+<input
+                    style={{ width: '300px', padding: '10px', margin: '10px auto', borderRadius: '5px', border: '1px solid blue' }}
+                    type="dnumber"
+                    placeholder="customer_id"
+                    onChange={(e) => setBookingDetails({ ...bookingDetails, customer_id: e.target.value })}
+                />
+                <input
+                    style={{ width: '300px', padding: '10px', margin: '10px auto', borderRadius: '5px', border: '1px solid blue' }}
+                    type="number"
+                    placeholder="hotel_id"
+                    onChange={(e) => setBookingDetails({ ...bookingDetails, hotel_id: e.target.value })}
+                /> */}
 
 //<h2 style={{color: 'green'}}>Whrer do you want to stay?</h2>
 {/* <Input type="text" placeholder="Country" value={country} onChange={(e) => setCountry(e.target.value)} />

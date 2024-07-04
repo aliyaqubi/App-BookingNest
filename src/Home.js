@@ -1,9 +1,9 @@
 import React from 'react';
-// import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Home.css'; 
 import homeImage from './images/Home-Hotel.png';
 import SearchH from './SearchH.js'                        
-import { green } from '@mui/material/colors';
+//import { green } from '@mui/material/colors';
 
 
 const Home = () => {
@@ -21,9 +21,6 @@ const Home = () => {
       <p style={{fontSize:'1rem', marginTop: '20px', color:'green'}}>
         Experience the best stay at our luxurious hotels with top-notch amenities and services.
       </p>
-      {/* <button style={{ padding: '10px 20px', marginTop: '30px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
-        Book Now
-      </button> */}
     </section>
     <section id="search-hotel" style={{ textAlign: 'center', margin: '40px 0', marginTop: '100px' }}>
       <SearchH/>

@@ -9,7 +9,8 @@ import About from './About.js';
 import RegisterCustomer from './RegisterC.js';
 import RegisterHotel from './RegisterH.js';
 import SearchH from './SearchH.js';
-import SearchHResults from './SearchHResulats.js';
+import SearchHResults from './SearchHResults.js';
+import Booking from './Booking.js';
 // import LogInOut from './LogInOut.js';
 // import Hotel from './Hotel.js';
 
@@ -63,7 +64,9 @@ function App() {
               <Route path="/hotel-registration" element={<RegisterHotel />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
+              <Route path="/" element={<SearchH />} />
               <Route path="/search-hotel-results" element={<SearchHResults />} />
+              <Route path="/bookings" element={<Booking />} />
             </Routes>
           </div>
         </Layout>

@@ -62,7 +62,8 @@ const Layout = ({ children }) => {
     const [password, setPassword] = useState('');
     const [authToken, setAuthToken] = useState(null);
     const [authTokenType, setAuthTokenType] = useState(null);
-    const [hotelId, setHotelId] = useState('');
+    //const [hotelId, setHotelId] = useState('');
+    const [customerId, setCustomerId] = useState('');
 
     
 
@@ -86,7 +87,7 @@ const Layout = ({ children }) => {
         body: formData
       }
 
-      fetch(BASE_URL + 'hotel-token', requestOptions)
+      fetch(BASE_URL + 'customer-token', requestOptions)
         .then(response => {
           if (response.ok) {
             return response.json()
@@ -97,7 +98,8 @@ const Layout = ({ children }) => {
           console.log(data);
           setAuthToken(data.access_token)
           setAuthTokenType(data.token_type)
-          setHotelId(data.hotel_id)
+          //setHotelId(data.hotel_id)
+          setCustomerId(data.customer_id)
           setUsername(data.username)
         })
         .catch(error => {
@@ -112,7 +114,8 @@ const Layout = ({ children }) => {
     const signOut = (event) => {
       setAuthToken('')
       setAuthTokenType('')
-      setHotelId('')
+      //setHotelId('')
+      setCustomerId('')
       setUsername('')
     }
 
@@ -123,7 +126,7 @@ const Layout = ({ children }) => {
           <NavLink to="/" exact activeClassName="active" href="#home" style={{ textDecoration: 'none', color: '#4CAF50' }}>
             <Logo src={logo} alt="BookingNest Logo" />
           </NavLink>
-          BookingNest
+          BookingNest...
         </Title>  
         <nav>
           <header>
