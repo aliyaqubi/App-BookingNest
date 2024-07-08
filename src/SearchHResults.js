@@ -58,8 +58,3 @@ const SearchHResults = () => {
 
 export default SearchHResults;
 
-// const SearchHResults = () => {
-
-// };
-
-// export default SearchHResults;

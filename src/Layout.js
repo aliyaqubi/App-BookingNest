@@ -131,9 +131,16 @@ const Layout = ({ children }) => {
         <nav>
           <header>
             {authToken ? (
-              <StyledButton onClick={() => signOut()}>
-                Logout
-              </StyledButton>
+              <div>
+                <StyledButton onClick={() => signOut()}>
+                  Logout
+                </StyledButton>
+                <Link to="/profile">
+                    <button style={{ margin: '0 5px', padding: '10px 20px', backgroundColor: 'white', color: '#4CAF50', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+                        Profile
+                    </button>
+                </Link>
+              </div>
               ) : (
                 <div>
                     <Link to="/hotel-registration">
@@ -155,7 +162,7 @@ const Layout = ({ children }) => {
         </header>
         </nav>
       </Header>
-      <nav style={{ textAlign: 'center', padding: '20px'}}>
+      <nav style={{ textAlign: 'center', padding: '10px'}}>
         <NavLink to="/" exact activeClassName="active" href="#home" style={{ textDecoration: 'none', color: '#4CAF50' }}>
           Home
         </NavLink>
@@ -165,12 +172,12 @@ const Layout = ({ children }) => {
         </NavLink>
         {' | '}
         <NavLink to="/contact" activeClassName="active" href="#contact" style={{ textDecoration: 'none', color: '#4CAF50' }}>
-          Contact
+          Contact US
         </NavLink>
       </nav> 
       <main>{children}</main>
       <footer style={{ backgroundColor: '#4CAF50', padding: '20px', textAlign: 'center' }}>
-        <p>&copy; 2024 BookingNest. All rights reserved.</p>
+        <p style={{color: 'white'}} >&copy; 2024 BookingNest. All rights reserved.</p>
       </footer>
       {openSignIn && (                                                          //> Block: Login Pop-up form
         <Modal open={openSignIn} onClose={() => setOpenSignIn}>
@@ -205,36 +212,4 @@ const Layout = ({ children }) => {
 export default Layout;
 
 
-
-//> What was at the first:
-
-// return (
-//     <div>
-//       <header style={{ position: 'sticky', top: '0', backgroundColor: '#4CAF50', padding: '10px 20px', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-//         <h1 style={{ margin: 0 }}>BookingNest ...</h1>
-//         <div>
-//             <Link to="/hotel-registration">
-//                 <button style={{ margin: '0 5px', padding: '10px 20px', backgroundColor: 'white', color: '#4CAF50', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
-//                     Register Your Hotel
-//                 </button>
-//             </Link>
-//             <Link to="/customer-registration">
-//                 <button style={{ margin: '0 5px', padding: '10px 20px', backgroundColor: 'white', color: '#4CAF50', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
-//                     Register
-//                 </button>
-//             </Link>
-//             <button style={{ margin: '0 5px', padding: '10px 20px', backgroundColor: 'white', color: '#4CAF50', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
-//                 Login
-//             </button>
-//         </div>
-//     </header>
-//     <main>{children}</main>
-//     <footer style={{ backgroundColor: '#f2f2f2', padding: '20px', textAlign: 'center' }}>
-//         <p>&copy; 2024 BookingNest. All rights reserved.</p>
-//     </footer>
-//     </div>
-//   );
-// };
-
-// export default Layout;
 

@@ -1,45 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { styled } from '@mui/system';
-//import { useHistory } from 'react-router-dom';
+//import { styled } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-
-const Input = styled('input')`
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-`;
-
-const Button = styled('button')`
-  padding: 10px 20px;
-  margin: 10px 0;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #45a049;
-  }
-`;
-
-const ErrorMessage = styled('p')`
-  color: red;
-`;
 
 const SearchH = () => {
   //const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
-  const [results, setResults] = useState([]);
+  //const [results, setResults] = useState([]);
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  //const history = useHistory();
-
+  
   const handleSearch = async () => {
     if (!city) {
       setError('Please enter a country or a city to search');
@@ -49,9 +22,7 @@ const SearchH = () => {
 
     try {
       setError('');
-      //const countryResponse = country ? await axios.get(`http://localhost:8000/hotel/all?country=${country}`) : { data: [] };
       const cityResponse = city ? await axios.get(`http://localhost:8000/hotel/all?city=${city}`) : { data: [] };
-      //setResults([...countryResponse.data, ...cityResponse.data]);
       navigate('/search-hotel-results', { state: { results: (cityResponse.data) } });
     } catch (error) {
       setError('Error during search. Please try again later.');
@@ -60,10 +31,11 @@ const SearchH = () => {
 
   return (
     <div>
+      <h2 style={{marginBottom: '10px' , color: 'blue'}}>Lets start !</h2>
       <h2 style={{color: 'blue'}}>Where do you want to stay?</h2>
         <form>
           <input
-            style={{ width: '300px', padding: '10px', margin: '10px auto', borderRadius: '5px', border: '1px solid blue' }}
+            style={{ width: '400px', padding: '10px', margin: '10px auto', borderRadius: '5px', border: '1px solid blue' }}
             type="text"
             placeholder="City"
             value={city}
@@ -71,7 +43,7 @@ const SearchH = () => {
           />
           <Link to="/search-hotel-results">
             <button
-              style={{ width: '315px', padding: '10px 20px', margin: '10px auto', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+              style={{ width: '415px', padding: '10px 20px', margin: '10px auto', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
               onClick={handleSearch}>
                 Search
             </button>
@@ -84,3 +56,19 @@ const SearchH = () => {
 
 export default SearchH;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//const countryResponse = country ? await axios.get(`http://localhost:8000/hotel/all?country=${country}`) : { data: [] };
+
+//setResults([...countryResponse.data, ...cityResponse.data]);
