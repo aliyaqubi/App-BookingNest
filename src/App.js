@@ -9,8 +9,8 @@ import About from './About.js';
 import RegisterCustomer from './RegisterC.js';
 import RegisterHotel from './RegisterH.js';
 import SearchH from './SearchH.js';
-import SearchHResults from './SearchHResulats.js';
-// import LogInOut from './LogInOut.js';
+import SearchHResults from './SearchHResults.js';
+import Booking from './Booking.js';
 // import Hotel from './Hotel.js';
 
 
@@ -25,14 +25,14 @@ function App() {
   // const [password, setPassword] = useState('');
   const [authToken, setAuthToken] = useState('');
   const [authTokenType, setAuthTokenType] = useState('');
-  const [hotelId, setHotelId] = useState('');
+  const [customerId, setCustomerId] = useState('');
 
   // retreiving dtat from window local storage
   useEffect(() => {
     setAuthToken(window.localStorage.getItem('authToken') || '');
     setAuthTokenType(window.localStorage.getItem('authTokenType') || '');
     setUsername(window.localStorage.getItem('username') || '');
-    setHotelId(window.localStorage.getItem('hotelId') || '');
+    setCustomerId(window.localStorage.getItem('customerId') || '');
   }, []);
 
   // Update localStorage whenever page state changes by refreshing (storing dtat in window local storage)
@@ -46,10 +46,10 @@ function App() {
     username
       ? window.localStorage.setItem('username', username)
       : window.localStorage.removeItem('username');
-    hotelId
-      ? window.localStorage.setItem('hotelId', hotelId)
-      : window.localStorage.removeItem('hotelId');
-  }, [authToken, authTokenType, username, hotelId]);
+    customerId
+      ? window.localStorage.setItem('customerId', customerId)
+      : window.localStorage.removeItem('customerId');
+  }, [authToken, authTokenType, username, customerId]);
 
   
   return (
@@ -63,7 +63,9 @@ function App() {
               <Route path="/hotel-registration" element={<RegisterHotel />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
+              <Route path="/" element={<SearchH />} />
               <Route path="/search-hotel-results" element={<SearchHResults />} />
+              <Route path="/bookings" element={<Booking />} />
             </Routes>
           </div>
         </Layout>

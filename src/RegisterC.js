@@ -3,19 +3,17 @@ import axios from 'axios';
 import './RegisterC.css'; 
 
 
+
 const RegisterCustomer = () => {
+  
   const [firstname, setFirstname] = useState('');              //> definition of input elements with an empty '' value
   const [lastname, setLastname] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  // const [adress, setAdress] = useState('');
-  // const [nationality, setNationality] = useState('');
-  // const [age, setAge] = useState('');
   const [message, setMessage] = useState('');
-
-
+ 
 
   const handleSubmit = async (event) => {                    //> handeling the changing of values when user input new values
     event.preventDefault();
@@ -27,9 +25,6 @@ const RegisterCustomer = () => {
         password,
         email,
         phone,
-        // adress,
-        // nationality,
-        // age,
       });
       if (response && response.data) {
         setMessage('Congratulations! your are registared successfully.');
@@ -44,6 +39,7 @@ const RegisterCustomer = () => {
       }
     }
   };
+  
 
   return (               
     <div>  
